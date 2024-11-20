@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+
+        h1 {
+            padding: 3px;
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            background-color: rgb(24, 24, 77);
+        }
+
+        .form{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            background: #b9cbda;
+        }
+
+        .form h1 {
+            grid-column: 1/3;
+            text-align: center;
+            margin: 0;
+        }
+
+        .form input {
+            border: 2px solid #7c7c7c;
+            border-radius: 4px;
+        }
+
+        .form .gender-options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form .language-options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form .submit-btn {
+            grid-column: 1/3;
+            text-align: center;
+        }
+
+        .form textarea {
+            border: 2px solid #7c7c7c;
+            width: 70%; 
+            height: 80px; 
+        }
+
+        .hr {
+            grid-column: 1/3;
+            border: none;
+            border-top: 2px solid #7c7c7c;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h1>Регистрация на сервере:</h1>
+        
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login" placeholder="Введите логин">
+        
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" placeholder="Введите пароль">
+        
+        <label for="confirm-password">Подтверждение:</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Повторите пароль">
+
+        <hr class="hr">
+        
+        <label for="fullname">ФИО:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Введите ФИО">
+
+        <label>Пол:</label>
+        <div class="gender-options">
+            <label>
+                <input type="radio" name="gender" value="male"> Мужской
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female"> Женский
+            </label>
+        </div>
+
+        <label>Иностанные языки:</label>
+        <div class="language-options">
+            <label>
+                <input type="checkbox" name="language" value="en"> Английский
+            </label>
+            <label>
+                <input type="checkbox" name="language" value="dh"> Немецкий
+            </label>
+            <label>
+                <input type="checkbox" name="language" value="fr"> Французский
+            </label>
+            <label>
+                <input type="checkbox" name="language" value="es"> Испанский
+            </label>
+            <label>
+                <input type="checkbox" name="language" value="it"> Итальянский
+            </label>
+        </div>
+
+        <label for="login">Сфера деятельности:</label>
+        <div>
+            <select name="job" size="1">
+                    <option value='ob' selected>Образование</option>
+                    <option value='md'>Медицина</option>
+                    <option value='it'>IT</option>
+                    <option value='dr'>Другое</option>
+            </select>
+        </div>
+
+        <label for="email">e-mail:</label>
+        <input type="email" name="email"/>
+
+        <label for="info">Дополнительная информация:</label>
+        <textarea name="comment" minlength="2" maxlength="1024"></textarea>
+
+        <div class="submit-btn">
+            <input type="submit" value="Готово"/>
+            <input type="submit" value="Сброс"/>
+        </div>
+    </div>
+</body>
+</html>
