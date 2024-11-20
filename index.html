@@ -17,11 +17,13 @@
             background-color: rgb(24, 24, 77);
         }
 
-        .form{
+        .form {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             background: #b9cbda;
+            padding: 20px;
+            max-width: 500px;
         }
 
         .form h1 {
@@ -30,9 +32,15 @@
             margin: 0;
         }
 
-        .form input {
+        .form input, .form textarea {
             border: 2px solid #7c7c7c;
             border-radius: 4px;
+            padding: 5px;
+        }
+
+        input:invalid, textarea:invalid {
+            border-color: red;
+            background-color: #ffe6e6;
         }
 
         .form .gender-options {
@@ -52,8 +60,8 @@
 
         .form textarea {
             border: 2px solid #7c7c7c;
-            width: 70%; 
-            height: 80px; 
+            width: 70%;
+            height: 80px;
         }
 
         .hr {
@@ -69,36 +77,36 @@
         <h1>Регистрация на сервере:</h1>
         
         <label for="login">Логин:</label>
-        <input type="text" id="login" name="login" placeholder="Введите логин">
+        <input type="text" id="login" name="login" placeholder="Введите логин" minlength="5" required>
         
         <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" placeholder="Введите пароль">
+        <input type="password" id="password" name="password" placeholder="Введите пароль" minlength="8" required>
         
         <label for="confirm-password">Подтверждение:</label>
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Повторите пароль">
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Повторите пароль" minlength="8" required>
 
         <hr class="hr">
         
         <label for="fullname">ФИО:</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Введите ФИО">
+        <input type="text" id="fullname" name="fullname" placeholder="Введите ФИО" minlength="6" required>
 
         <label>Пол:</label>
         <div class="gender-options">
             <label>
-                <input type="radio" name="gender" value="male"> Мужской
+                <input type="radio" name="gender" value="male" required> Мужской
             </label>
             <label>
-                <input type="radio" name="gender" value="female"> Женский
+                <input type="radio" name="gender" value="female" required> Женский
             </label>
         </div>
 
-        <label>Иностанные языки:</label>
+        <label>Иностранные языки:</label>
         <div class="language-options">
             <label>
                 <input type="checkbox" name="language" value="en"> Английский
             </label>
             <label>
-                <input type="checkbox" name="language" value="dh"> Немецкий
+                <input type="checkbox" name="language" value="de"> Немецкий
             </label>
             <label>
                 <input type="checkbox" name="language" value="fr"> Французский
@@ -111,21 +119,21 @@
             </label>
         </div>
 
-        <label for="login">Сфера деятельности:</label>
+        <label for="job">Сфера деятельности:</label>
         <div>
-            <select name="job" size="1">
-                    <option value='ob' selected>Образование</option>
-                    <option value='md'>Медицина</option>
-                    <option value='it'>IT</option>
-                    <option value='dr'>Другое</option>
+            <select name="job" id="job" required>
+                <option value="ob" selected>Образование</option>
+                <option value="md">Медицина</option>
+                <option value="it">IT</option>
+                <option value="dr">Другое</option>
             </select>
         </div>
 
         <label for="email">e-mail:</label>
-        <input type="email" name="email"/>
+        <input type="email" name="email" id="email" required>
 
         <label for="info">Дополнительная информация:</label>
-        <textarea name="comment" minlength="2" maxlength="1024"></textarea>
+        <textarea name="comment" id="info" minlength="2" maxlength="1024" required></textarea>
 
         <div class="submit-btn">
             <input type="submit" value="Готово"/>
